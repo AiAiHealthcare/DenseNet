@@ -1,0 +1,48 @@
+DenseNet-7-12 created.
+Model created
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 2048, 2048, 1)     0         
+_________________________________________________________________
+initial_conv2D (Conv2D)      (None, 2048, 2048, 16)    144       
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 2048, 2048, 16)    64        
+_________________________________________________________________
+activation_1 (Activation)    (None, 2048, 2048, 16)    0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 2048, 2048, 12)    1728      
+_________________________________________________________________
+merge_1 (Merge)              (None, 2048, 2048, 28)    0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 2048, 2048, 28)    112       
+_________________________________________________________________
+activation_2 (Activation)    (None, 2048, 2048, 28)    0         
+_________________________________________________________________
+global_average_pooling2d_1 ( (None, 28)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 87        
+=================================================================
+Total params: 2,135.0
+Trainable params: 2,047.0
+Non-trainable params: 88.0
+_________________________________________________________________
+Finished compiling
+Building model...
+Found 285 images belonging to 3 classes.
+Found 100 images belonging to 3 classes.
+Epoch 1/11
+Traceback (most recent call last):
+  File "flowdir.py", line 88, in <module>
+    verbose=2)
+  File "/conda3/envs/idp/lib/python3.5/site-packages/keras/legacy/interfaces.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/conda3/envs/idp/lib/python3.5/site-packages/keras/engine/training.py", line 1876, in fit_generator
+    class_weight=class_weight)
+  File "/conda3/envs/idp/lib/python3.5/site-packages/keras/engine/training.py", line 1614, in train_on_batch
+    check_batch_axis=True)
+  File "/conda3/envs/idp/lib/python3.5/site-packages/keras/engine/training.py", line 1295, in _standardize_user_data
+    exception_prefix='model input')
+  File "/conda3/envs/idp/lib/python3.5/site-packages/keras/engine/training.py", line 133, in _standardize_input_data
+    str(array.shape))
+ValueError: Error when checking model input: expected input_1 to have shape (None, 2048, 2048, 1) but got array with shape (64, 2048, 2048, 3)
